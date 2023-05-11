@@ -1,4 +1,6 @@
 import json
+import os
 
 def log(message):
-    print('Adicionando log via função: ' + json.dumps(message))
+    print(os.environ['MINHA_VAR'])
+    print(json.dumps(message))

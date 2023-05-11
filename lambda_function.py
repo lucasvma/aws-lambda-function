@@ -3,7 +3,7 @@ from log import log
 
 def lambda_handler(event, context):
 
-    log('Log de execução após GitHubAction. event: ' + json.dumps(event))
+    log('Event: ' + json.dumps(event))
 
     return {
         'statusCode': 200,
