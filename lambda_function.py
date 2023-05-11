@@ -5,7 +5,7 @@ from log import log
 def lambda_handler(event, context):
     s3 = boto3.client('s3')
 
-    record = event.get('Records')[0]
+    record = event['Records'][0]
 
     bucket = record.s3.bucket.name
     key = record.s3.object.key
@@ -14,7 +14,7 @@ def lambda_handler(event, context):
 
     mega_byte = 1024 * 1024
 
-    if get_object_result.get('ContentLength') > 1 * mega_byte:
+    if get_object_result['ContentLength'] > 1 * mega_byte:
         log('Objeto muito grande')
 
         return 'Objeto muito grande'
