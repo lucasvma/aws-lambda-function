@@ -11,6 +11,9 @@ def lambda_handler(event, context):
     bucket = record['s3']['bucket']['name']
     key = record['s3']['object']['key']
 
+    print('bucket_name {}', bucket)
+    print('object_key {}', key)
+
     try:
         get_object_result = s3_client.get_object(Bucket=bucket, Key=key)
 
