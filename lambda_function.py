@@ -7,8 +7,8 @@ def lambda_handler(event, context):
 
     record = event['Records'][0]
 
-    bucket = record.s3.bucket.name
-    key = record.s3.object.key
+    bucket = record['s3']['bucket']['name']
+    key = record['s3']['object']['key']
 
     get_object_result = s3.get_object(Bucket=bucket, Key=key)
 
